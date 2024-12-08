@@ -1,0 +1,327 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/* tasks-container: This is the parent container for all task boxes */
+.tasks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Creates responsive grid */
+  gap: 20px; /* Adds space between the task boxes */
+  margin-top: 20px;
+  margin-left:10px;
+}
+
+/* task-box: This is the individual task card */
+.task-box {
+  background-color: #f0f8ff; /* Light background color */
+  border: 2px solid #ccc; /* Border around the task */
+  padding: 15px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for 3D effect */
+  transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+/* Hover effect to make the task box pop */
+.task-box:hover {
+  transform: scale(1.05); /* Slightly enlarge the task box */
+}
+
+/* Title styling for the task box */
+.task-box h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+/* Description styling */
+.task-box p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Status styling for completed and pending tasks */
+.task-box p strong {
+  color: #333;
+}
+
+.task-box p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.task-box p:nth-child(3) {
+  font-weight: bold;
+  color: green;
+}
+
+.task-box p:nth-child(4) {
+  font-weight: bold;
+  color: darkgrey;
+}
+
+/* Styling the input and button */
+input[type="text"] {
+  padding: 10px;
+  margin: 10px 0;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+/* src/index.css */
+
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add-task-form label {
+  font-weight: bold;
+}
+
+.task-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.task-card {
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-card h3 {
+  margin: 0;
+  color: #333;
+}
+
+.task-card p {
+  margin: 8px 0;
+}
+
+.task-card p:nth-child(2) {
+  color: #555;
+}
+
+
+
+/* src/index.css */
+
+ul.task-list {
+  list-style-type: none;  /* Remove list bullets */
+  padding: 0;
+}
+
+.task-card {
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.task-card h3 {
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.task-card p {
+  margin: 4px 0;
+}
+
+.task-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.task-buttons button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task-buttons button:hover {
+  opacity: 0.9;
+}
+
+.task-buttons button:nth-child(1) {
+  background-color: #007bff;  /* Update button color */
+  color: white;
+}
+
+.task-buttons button:nth-child(2) {
+  background-color: #dc3545;  /* Delete button color */
+  color: white;
+}
+
+
+/* AddTaskForm.css */
+.add-task-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-task-form h3 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
+  text-align: center;
+}
+
+.add-task-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #555;
+}
+
+.add-task-form input[type="text"],
+.add-task-form textarea,
+.add-task-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  margin-top: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.add-task-form input[type="text"]:focus,
+.add-task-form textarea:focus,
+.add-task-form select:focus {
+  border-color: #007bff;
+}
+
+.add-task-form textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+.add-task-form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-task-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Register.css */
+
+.register-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-field {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.submit-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.submit-button:disabled {
+  background-color: #b8d0e5;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input.input-field {
+  width: 250px;
+}
